@@ -11,7 +11,12 @@ fi
 
 # Part 2. Commit changes and sync with GitHub.
 
-# This script adds all new or modified files in your "working tree"
+# This part begins by retrieving all changes to "submodules" from GitHub.
+# Submodules are repos within repos. Within repos for student assignments,
+# they are used to incorporate various utilities that are re-used across
+# many different assignments.
+
+# Next, this script adds all new or modified files in your "working tree"
 # to the index or "staging area" of your git repository in c9.
 
 # If anything was added, this script opens a tab for you to edit 
@@ -27,6 +32,8 @@ fi
 # your c9 repo. If there are changes, you must edit another commit message 
 # so that they can be merged into your c9 repository. Then this script pushes 
 # changes from your c9 repository to GitHub.
+
+git submodule update --remote
 
 git add --all && git commit && git pull && git push && echo Success!
 
