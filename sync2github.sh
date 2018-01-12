@@ -33,6 +33,8 @@ fi
 # so that they can be merged into your c9 repository. Then this script pushes 
 # changes from your c9 repository to GitHub.
 
+cd ..
+
 git submodule update --remote
 
 git add --all && git commit && git pull && git push && echo Success!
